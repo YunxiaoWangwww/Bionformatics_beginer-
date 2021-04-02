@@ -32,12 +32,12 @@ def Profile(Motifs):
     for symbol in "ACGT":
         count[symbol] = []
         for j in range(k):
-             count[symbol].append(0)
+             count[symbol].append(1)
     t = len(Motifs)
     for i in range(t):
         for j in range(k):
             symbol = Motifs[i][j]
-            count[symbol][j] += 1/t 
+            count[symbol][j] += 1/t+4
     return count   
 
 #output the consensus sequence for an array of Motifs -> each base is with the highest frequency in each position of the consensus sequence
