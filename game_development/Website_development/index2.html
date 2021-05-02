@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock information
+{% endblock %}
+{% block main %}
+      {% if alert%}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Action committed!</strong> Your stock information has been updated!
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {%endif%}
+
+    <h2>
+        Stock information
+    </h2>
+    <a href = "/transaction">Add more cash</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Stock</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Total Share Price</th>
+          <th scope="col">Cash Balance</th>
+           <th scope="col">Grand Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>{{cash_balance}}</td>
+          <td>{{cash_balance}}</td>
+        </tr>
+      </tbody>
+    </table>
+{% endblock %}
