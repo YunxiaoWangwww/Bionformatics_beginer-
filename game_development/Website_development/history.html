@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+{% block main %}
+      {% if alert%}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Action committed!</strong> Your stock information has been updated!
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {%endif%}
+
+    <h2>
+        Transaction history
+    </h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Stock</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Cash before</th>
+          <th scope="col">Cash left</th>
+          <th scope="col">Mode</th>
+          <th scope="col">Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in range(length) %}
+        <tr>
+          <td>{{name[i]}}</td>
+          <td>{{shares[i]}}</td>
+          <td>{{price[i]}}</td>
+          <td>{{cash_before[i]}}</td>
+          <td>{{cash_left[i]}}</td>
+          <td>{{mode[i]}}</td>
+          <td>{{time[i]}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}
