@@ -1,5 +1,4 @@
 include!("dna_toolkit.rs");
-include!("data_structure.rs");
 use protein_translate::translate;
 
 fn main() {
